@@ -1,6 +1,6 @@
 import { ethers } from 'ethers'
-import address from '@/contracts/contractAddress.json'
-import abi from '@/artifacts/contracts/EventTicket.sol/EventTicket.json'
+import { address } from '@/constant'
+import { abi } from '@/contants'
 import { globalActions } from '@/store/globalSlices'
 import { store } from '@/store'
 import axios from 'axios'
@@ -20,16 +20,17 @@ const getEthereumContracts = async () => {
   if (accounts?.length > 0) {
     const provider = new ethers.providers.Web3Provider(ethereum)
     const signer = await provider.getSigner()
-    const contracts = new ethers.Contract(address.eventTicketContract, abi.abi, signer)
+    const contracts = new ethers.Contract(address, abi, signer)
 
     return contracts
   }
   else {
-    const provider = new ethers.providers.JsonRpcProvider("https://base-sepolia.g.alchemy.com/v2/" + process.env.NEXT_RPC_URL
+    const provider = new ethers.providers.JsonRpcProvider(
+      "https://base-sepolia.g.alchemy.com/v2/" + process.env.NEXT_RPC_URL
     )
     const wallet = ethers.Wallet.createRandom()
     const signer = wallet.connect(provider)
-    const contracts = new ethers.Contract(address.eventTicketContract, abi.abi, signer)
+    const contracts = new ethers.Contract(address, abi, signer)
 
     return contracts
   }
