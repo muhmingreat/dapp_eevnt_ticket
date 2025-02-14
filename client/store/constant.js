@@ -1,4 +1,4 @@
-import EventTicket  from './EventTicket.json'
+import EventTicket  from '@/EventTicket.json'
 
 export const address  =   "0x827f408ad309ACc5265Be216cA2B618b9a565ab8"
 
