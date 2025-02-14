@@ -1,3 +1,4 @@
+  
   export function getExpiryDate(timestamp) {
     const currentDate = Date.now()
     const diffInMilliseconds = timestamp - currentDate
@@ -38,14 +39,14 @@
   
     const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24))
     if (diffInDays > 0) {
-      return ${diffInDays} day(s)
+      return `${diffInDays} day(s)`
     }
   
     const diffInHours = Math.floor((diffInMs / (1000 * 60 * 60)) % 24)
     const diffInMinutes = Math.floor((diffInMs / (1000 * 60)) % 60)
     const diffInSeconds = Math.floor((diffInMs / 1000) % 60)
   
-    return ${diffInHours} hour(s), ${diffInMinutes} minute(s), ${diffInSeconds} second(s)
+    return `${diffInHours} hour(s), ${diffInMinutes} minute(s), ${diffInSeconds} second(s)`
   }
   
   export function timestampToDatetimeLocal(timestamp) {
@@ -56,5 +57,5 @@
     const hours = String(date.getHours()).padStart(2, '0')
     const minutes = String(date.getMinutes()).padStart(2, '0')
   
-    return ${year}-${month}-${day}T${hours}:${minutes}
+    return `${year}-${month}-${day}T${hours}:${minutes}`
   }

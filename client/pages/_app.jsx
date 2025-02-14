@@ -1,4 +1,4 @@
-{ToastContainer } from 'react-toastify'
+import {ToastContainer } from 'react-toastify'
 import '@/styles/global.css'
 import 'react-toastify/dist/ReactToastify.css'
 import '@rainbow-me/rainbowkit/styles.css'

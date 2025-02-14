@@ -1,6 +1,6 @@
 import { ethers } from 'ethers'
-import { address } from '@/constant'
-import { abi } from '@/contants'
+import { address } from './contants'
+import { abi } from './contants'
 import { globalActions } from '@/store/globalSlices'
 import { store } from '@/store'
 import axios from 'axios'
