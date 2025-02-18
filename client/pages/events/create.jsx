@@ -89,21 +89,7 @@ const Page = () => {
         error: 'Encountered error 🤯',
       }
     )
-    await toast.promise(
-      new Promise(async (resolve, reject) => {
-        ethUSD(event).then((tx) => {
-          console.log(tx)
-          resetForm()
-          resolve(tx)
-        })
-          .catch((error) => reject(error))
-      }),
-      {
-        pending: 'Approve transaction...',
-        success: 'Event creation successful 👌',
-        error: 'Encountered error 🤯',
-      }
-    )
+    
   }
 
   const resetForm = () => {
@@ -197,7 +183,8 @@ const Page = () => {
 
             <div>
           <input
-              className="block w-full text-sm bg-transparent border-0 focus:outline-none focus:ring-0"
+              className="block w-full text-sm bg-transparent
+               border-0 focus:outline-none focus:ring-0"
               type="file"
               onChange={handleImageSelect}
             />
