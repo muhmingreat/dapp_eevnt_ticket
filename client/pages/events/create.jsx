@@ -194,7 +194,7 @@ const Page = () => {
               </div>
             </div>
           </div>
-          
+
             <div>
           <input
               className="block w-full text-sm bg-transparent border-0 focus:outline-none focus:ring-0"
@@ -211,18 +211,7 @@ const Page = () => {
             </button>
           </div>
 
-          {/* <div className="flex flex-row justify-between items-center bg-gray-200 rounded-xl mt-5 p-2">
-            <input
-              className="block w-full text-sm bg-transparent border-0 focus:outline-none focus:ring-0"
-              type="file"
-              name="imageUrl"
-              placeholder="ImageURL"
-              // pattern="https?://.+(\.(jpg|png|gif))?$"
-              value={event.imageUrl}
-              onChange={handleChange}
-              required
-            />
-          </div> */}
+          
 
           <div
             className="flex flex-col sm:flex-row justify-between items-center w-full
