@@ -1,4 +1,4 @@
-create component                              
+                           
 import { NextPage } from 'next'
 import Head from 'next/head'
 import { useState, useContext } from 'react'
@@ -9,6 +9,10 @@ import { createEvent, ethUSD } from '@/services/blockchain'
 
 const Page = () => {
   const { address } = useAccount()
+
+  const [selectedFile, setSelectedFile] = useState(null)
+  const [url, setUrl] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
   const [event, setEvent] = useState({
     title: '',
     imageUrl: '',
@@ -25,8 +29,43 @@ const Page = () => {
       ...prevState,
       [name]: value,
     }))
-    
-  }
+    }
+    const handleImageSelect = ({ target }) => {
+      setSelectedFile(target.files[0])
+    }
+  
+    const uploadImage = useCallback(async () => {
+      if (selectedFile) {
+        setIsLoading(true)
+        const formData = new FormData()
+        formData.append("file", selectedFile)
+  
+        try {
+          const response = await axios.post(
+            "https://api.pinata.cloud/pinning/pinFileToIPFS",
+            formData,
+            {
+              headers: {
+                "Content-Type": "multipart/form-data",
+                pinata_api_key: process.env.NEXT_PUBLIC_PINATA_API_KEY,
+            pinata_secret_api_key: process.env.NEXT_PUBLIC_PINATA_SECRECT_KEY,
+              },
+            }
+          )
+  
+          const fileUrl = `https://gateway.pinata.cloud/ipfs/${response.data.IpfsHash}`
+          setUrl(fileUrl)
+          setEvent((prevState) => ({
+            ...prevState,
+            imageUrl: fileUrl,
+          }))
+        } catch (error) {
+          console.error("Pinata upload error:", error)
+        } finally {
+          setIsLoading(false)
+        }
+      }
+    }, [selectedFile])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -155,11 +194,27 @@ const Page = () => {
               </div>
             </div>
           </div>
+          
+            <div>
+          <input
+              className="block w-full text-sm bg-transparent border-0 focus:outline-none focus:ring-0"
+              type="file"
+              onChange={handleImageSelect}
+            />
+            <button
+              type="button"
+              onClick={uploadImage}
+              className="bg-blue-500 p-2 text-white  hidden rounded-full"
+              disabled={isLoading}
+            >
+              {isLoading ? "Uploading..." : "Upload Image"}
+            </button>
+          </div>
 
-          <div className="flex flex-row justify-between items-center bg-gray-200 rounded-xl mt-5 p-2">
+          {/* <div className="flex flex-row justify-between items-center bg-gray-200 rounded-xl mt-5 p-2">
             <input
               className="block w-full text-sm bg-transparent border-0 focus:outline-none focus:ring-0"
-              type="url"
+              type="file"
               name="imageUrl"
               placeholder="ImageURL"
               // pattern="https?://.+(\.(jpg|png|gif))?$"
@@ -167,7 +222,7 @@ const Page = () => {
               onChange={handleChange}
               required
             />
-          </div>
+          </div> */}
 
           <div
             className="flex flex-col sm:flex-row justify-between items-center w-full
