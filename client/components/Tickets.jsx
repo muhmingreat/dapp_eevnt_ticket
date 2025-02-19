@@ -36,7 +36,9 @@ const Ticket = ({ tickets }) => {
           <div className="flex justify-end items-center w-full">
             <div className="flex justify-start items-center">
               <span className="flex items-center">
-                <FaEthereum /> <span>{ticket.ticketCost.toFixed(2)}</span>
+                <FaEthereum /> <span>{ticket.ticketCost.toFixed(3
+                  
+                )}</span>
               </span>
               <BsDot size={30} />
               <Moment className="text-gray-500" fromNow>
