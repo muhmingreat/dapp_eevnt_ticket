@@ -1,10 +1,11 @@
                            
 import { NextPage } from 'next'
 import Head from 'next/head'
-import { useState, useContext } from 'react'
+import { useState, useContext ,useCallback} from 'react'
 import { toast } from 'react-toastify'
 import { useAccount } from 'wagmi'
 import { createEvent, ethUSD } from '@/services/blockchain'
+
 
 
 const Page = () => {
