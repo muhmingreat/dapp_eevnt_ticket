@@ -1,12 +1,14 @@
   import EventList from '@/components/EventList'
-// import Footer from '@/components/Footer'
+import Footer from '@/components/Footer'
 import Hero from '@/components/Hero'
-// import Team from '@/components/Team'
+import Team from '@/components/Team'
 import { generateEventData } from '@/utils/fakeData'
 import { NextPage } from 'next'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import { getEvents} from '@/services/blockchain'
+import About from '@/components/About'
+import SplashScreen from '@/components/SplashScreen'
 
 
 
@@ -26,9 +28,10 @@ const Page = ({ eventsData }) => {
         <title>M M ticket </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <SplashScreen/>
       <Hero />
-      {/* <Team/> */}
+      <Team/>
+      
       <EventList events={collection} />
 
       <div className="mt-10 h-20 "></div>
@@ -45,7 +48,8 @@ const Page = ({ eventsData }) => {
           </button>
         </div>
       )}
-      {/* <Footer/> */}
+      <About/>
+      <Footer/>
     </div>
   
   )

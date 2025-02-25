@@ -112,7 +112,7 @@ const Page = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="lg:w-2/3 w-full mx-auto bg-white p-5 shadow-md">
+      <main className="lg:w-2/3 w-full mx-auto bg-white p-5 shadow-md mt-[80px]">
         <form onSubmit={handleSubmit} className="flex flex-col text-black">
           <div className="flex flex-row justify-between items-center mb-5">
             <p className="font-semibold">Create Event</p>
@@ -181,23 +181,26 @@ const Page = () => {
               </div>
             </div>
           </div>
+            <div className="flex flex-row justify-between items-center bg-gray-200 rounded-xl mt-5 p-2">
 
-            <div>
+            <div className="block w-full text-sm bg-transparent
+              border-0 focus:outline-none focus:ring-0">
           <input
               className="block w-full text-sm bg-transparent
-               border-0 focus:outline-none focus:ring-0"
+              border-0 focus:outline-none focus:ring-0"
               type="file"
               onChange={handleImageSelect}
-            />
+              />
             <button
               type="button"
               onClick={uploadImage}
               className="bg-blue-500 p-2 text-white  hidden rounded-full"
               disabled={isLoading}
-            >
+              >
               {isLoading ? "Uploading..." : "Upload Image"}
             </button>
           </div>
+              </div>
 
           
 

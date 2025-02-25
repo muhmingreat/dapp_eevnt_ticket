@@ -3,12 +3,19 @@ import React, { useState } from 'react'
 import { CgMenuLeft } from 'react-icons/cg'
 import { FaTimes } from 'react-icons/fa'
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+
 const Header = () => {
   return (
-    <header className="h-20 shadow-md p-5 sm:px-0 fixed z-50 top-0 right-0 left-0 bg-white">
+    <header className="h-20 shadow-md p-5 sm:px-0 fixed z-50 top-0 right-0 left-0 bg-white mb-10">
       <main className="lg:w-2/2 w-full mx-auto  flex justify-between items-center flex-wrap">
-        <Link href={'/'} className="text-lg font-bold ml-3">
-          M M Ticket
+        <Link href={'/'} className="text-lg font-bold ml-3 ">
+        <div className='h-[50px] w-[120px] bg-orange-700 text-white  rounded-full '>
+         
+
+          <div className='flex justify-center items-center pt-2'>
+        GoTicket
+          </div> 
+ </div>
         </Link>
         <Desktop />
         <Mobile />

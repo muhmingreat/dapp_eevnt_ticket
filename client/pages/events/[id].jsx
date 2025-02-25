@@ -33,7 +33,7 @@ const Page = ({ eventData, ticketsData }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="flex justify-center items-center flex-col flex-wrap p-6">
+      <section className="flex justify-center items-center flex-col flex-wrap p-6 mt-[100px]">
         <main
           className="lg:w-2/3 w-full mx-auto flex justify-start items-center
           flex-col sm:space-x-3"
@@ -49,7 +49,7 @@ const Page = ({ eventData, ticketsData }) => {
               
                 <span className="bg-orange-600 text-white rounded-xl px-4">Open</span>
               ) : (
-                <span className="bg-cyan-600 text-white rounded-xl px-4">Minted</span>
+                <span className="bg-cyan-600 text-white rounded-xl px-4">Close</span>
 
               )}
             </div>

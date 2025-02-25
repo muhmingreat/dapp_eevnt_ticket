@@ -3,7 +3,7 @@ import React from 'react'
 
 const Hero = () => {
   return (
-    <main className="lg:w-2/2 w-full mx-auto relative shadow-md px-5 pypa-7 bg-white">
+    <main className="lg:w-2/2 w-full mx-auto relative shadow-md px-5 pypa-7 bg-white mt-[100px]">
       <div className="relative pb-8 ">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="sm:text-center lg:text-left">
@@ -43,8 +43,9 @@ const Hero = () => {
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
           className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src="https://tse1.mm.bing.net/th?id=OIP.2fo-j8LteIw1csqoAwP4_wHaHa&pid=Api"
-          // "https://img.freepik.com/free-vector/business-partners-handshake_74855-5222.jpg?t=st=1661167225~exp=1661167825~hmac=33b5b2e34224ea0dfd65c9f3a054e1e1eb411626fe15e0becbfe343ab31f3ba1"
+          src=
+          // "https://tse1.mm.bing.net/th?id=OIP.2fo-j8LteIw1csqoAwP4_wHaHa&pid=Api"
+          "https://img.freepik.com/free-vector/business-partners-handshake_74855-5222.jpg?t=st=1661167225~exp=1661167825~hmac=33b5b2e34224ea0dfd65c9f3a054e1e1eb411626fe15e0becbfe343ab31f3ba1"
           alt=""
         />
       </div>
