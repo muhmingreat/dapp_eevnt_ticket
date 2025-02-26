@@ -18,7 +18,7 @@ const getEthereumContracts = async () => {
   const accounts = await ethereum?.request?.({ method: 'eth_accounts' })
 
   if (accounts?.length > 0) {
-    const provider = new ethers.Browserprovider(ethereum)
+    const provider = new ethers.BrowserProvider(ethereum)
     const signer = await provider.getSigner()
     const contracts = new ethers.Contract(address, abi, signer)
 
