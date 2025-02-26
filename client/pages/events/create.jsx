@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { useState, useContext ,useCallback} from 'react'
 import { toast } from 'react-toastify'
 // import { useAccount } from 'wagmi'
-import {useAppKitAccount } from 'reown/appkit/react'
+import {useAppKitAccount } from '@reown/appkit/react'
 import { createEvent, ethUSD } from '@/services/blockchain'
 
 

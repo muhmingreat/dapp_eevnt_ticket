@@ -6,7 +6,7 @@ import { getEvent,updateEvent } from '@/services/blockchain'
 import {  useState } from 'react'
 import { toast } from 'react-toastify'
 // import { useAccount } from 'wagmi'
-import {useAppKitAccount } from 'reown/appkit/react'
+import {useAppKitAccount } from '@reown/appkit/react'
 
 const Page = ({ eventData }) => {
   const { address } = useAppKitAccount()

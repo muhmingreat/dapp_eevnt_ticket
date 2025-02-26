@@ -2,7 +2,7 @@
 import React, { FormEvent, useState } from 'react'
 import { FaTimes } from 'react-icons/fa'
 import { toast } from 'react-toastify'
-import {useAppKitAccount } from 'reown/appkit/react'
+import {useAppKitAccount } from '@reown/appkit/react'
 import { globalActions } from '@/store/globalSlices'
 import { useDispatch, useSelector } from 'react-redux'
 import { buyTicket } from '@/services/blockchain'
