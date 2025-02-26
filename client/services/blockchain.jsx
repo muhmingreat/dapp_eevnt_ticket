@@ -5,8 +5,8 @@ import { globalActions } from '@/store/globalSlices'
 import { store } from '@/store'
 import axios from 'axios'
 
-export const toWei = (num) => ethers.utils.parseEther(num.toString())
-export const fromWei = (num) => ethers.utils.formatEther(num)
+export const toWei = (num) => ethers.parseEther(num.toString())
+export const fromWei = (num) => ethers.formatEther(num)
 
 let ethereum
 let tx
@@ -18,14 +18,14 @@ const getEthereumContracts = async () => {
   const accounts = await ethereum?.request?.({ method: 'eth_accounts' })
 
   if (accounts?.length > 0) {
-    const provider = new ethers.providers.Web3Provider(ethereum)
+    const provider = new ethers.Browserprovider(ethereum)
     const signer = await provider.getSigner()
     const contracts = new ethers.Contract(address, abi, signer)
 
     return contracts
   }
   else {
-    const provider = new ethers.providers.JsonRpcProvider(
+    const provider = new ethers.JsonRpcProvider(
       "https://base-sepolia.g.alchemy.com/v2/" + process.env.NEXT_RPC_URL
     )
     const wallet = ethers.Wallet.createRandom()

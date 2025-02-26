@@ -34,7 +34,7 @@ import '@/config/connection'
 
 
 export default function App({ Component, pageProps }) {
-  const queryClient = new QueryClient();
+  // const queryClient = new QueryClient();
   const [showChild, setShowChild] = useState(false)
 
   useEffect(() => {
