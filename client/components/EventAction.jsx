@@ -7,7 +7,7 @@ import { toast } from 'react-toastify'
 // import { useAccount } from 'wagmi'
 import {useAppKitAccount} from '@reown/appkit/react'
 import { deleteEvent,payout } from '@/services/blockchain'
-import { GrEdit } from '@react-icons/gr'
+import { GrEdit } from 'react-icons/gr'
 import { FiDollarSign } from 'react-icons/fi'
 import { useRouter } from 'next/router'
 
