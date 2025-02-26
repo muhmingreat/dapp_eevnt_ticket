@@ -38,8 +38,8 @@ const Desktop = () => (
     >
       Personal
     </Link>
-  
-       <ConnectButton/>
+  <appkit-button/>
+       {/* <ConnectButton/> */}
        
 
     
@@ -78,8 +78,9 @@ const Mobile = () => {
           >
             Personal
           </Link>
-          <ConnectButton/>
-        
+          {/* <ConnectButton/> */}
+
+        <appkit-button/>        
         </div>
       )}
     </div>

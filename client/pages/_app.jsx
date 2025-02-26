@@ -7,7 +7,7 @@ import Header from '@/components/Header'
 
 import { Provider } from 'react-redux';
 import { store } from '@/store';
-import './config/connection'
+import '@/config/connection'
 
 
 // import {
@@ -54,7 +54,7 @@ export default function App({ Component, pageProps }) {
                 <Provider store={store}>
 
                   <Header />
-                  {/* <div className="mt-10 h-20 "></div> */}
+                  <div className="mt-10 h-20 "></div>
                   <Component {...pageProps} />
 
                   {/* <div className="mt-10 h-20 "></div> */}

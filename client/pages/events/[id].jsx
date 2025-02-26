@@ -7,7 +7,8 @@ import { BsDot } from 'react-icons/bs'
 import { getEvent,getTickets } from '@/services/blockchain'
 import { FaEthereum } from 'react-icons/fa'
 import { calculateDateDifference, formatDate, getExpiryDate, truncate } from '@/utils/helper'
-import { useAccount } from 'wagmi'
+// import { useAccount } from 'wagmi'
+import {useAppKitAccount } from 'reown/appkit/react'
 import { useEffect} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { globalActions } from '@/store/globalSlices'
@@ -15,7 +16,7 @@ import EventActions from '@/components/EventAction'
 
 const Page = ({ eventData, ticketsData }) => {
   const  dispatch =  useDispatch()
-  const { address } = useAccount()
+  const { address } = useAppKitAccount()
 
   const {event, tickets} = useSelector((state) => state.globalStates) 
   const { setEvent, setTickets, setTicketModal} = globalActions

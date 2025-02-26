@@ -4,14 +4,15 @@ import { BiDotsVerticalRounded } from 'react-icons/bi'
 import React from 'react'
 import Link from 'next/link'
 import { toast } from 'react-toastify'
-import { useAccount } from 'wagmi'
+// import { useAccount } from 'wagmi'
+import {useAppKitAccount} from 'reown/appkit/react'
 import { deleteEvent,payout } from '@/services/blockchain'
 import { GrEdit } from 'react-icons/gr'
 import { FiDollarSign } from 'react-icons/fi'
 import { useRouter } from 'next/router'
 
 const EventActions = ({ event }) => {
-  const { address } = useAccount()
+  const { address } = useAppKitAccount()
   const router = useRouter()
 
   const handleDelete = async () => {

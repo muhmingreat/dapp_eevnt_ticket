@@ -3,13 +3,14 @@ import { NextPage } from 'next'
 import Head from 'next/head'
 import { useState, useContext ,useCallback} from 'react'
 import { toast } from 'react-toastify'
-import { useAccount } from 'wagmi'
+// import { useAccount } from 'wagmi'
+import {useAppKitAccount } from 'reown/appkit/react'
 import { createEvent, ethUSD } from '@/services/blockchain'
 
 
 
 const Page = () => {
-  const { address } = useAccount()
+  const { address } = useAppKitAccount()
 
   const [selectedFile, setSelectedFile] = useState(null)
   const [url, setUrl] = useState('')

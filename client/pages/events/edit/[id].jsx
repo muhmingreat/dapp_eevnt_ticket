@@ -5,10 +5,11 @@ import Link from 'next/link'
 import { getEvent,updateEvent } from '@/services/blockchain'
 import {  useState } from 'react'
 import { toast } from 'react-toastify'
-import { useAccount } from 'wagmi'
+// import { useAccount } from 'wagmi'
+import {useAppKitAccount } from 'reown/appkit/react'
 
 const Page = ({ eventData }) => {
-  const { address } = useAccount()
+  const { address } = useAppKitAccount()
   const [event, setEvent] = useState({
     ...eventData,
     startsAt: timestampToDatetimeLocal(eventData.startsAt),

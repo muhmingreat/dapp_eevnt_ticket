@@ -2,7 +2,7 @@
 import React, { FormEvent, useState } from 'react'
 import { FaTimes } from 'react-icons/fa'
 import { toast } from 'react-toastify'
-import { useAccount } from 'wagmi'
+import {useAppKitAccount } from 'reown/appkit/react'
 import { globalActions } from '@/store/globalSlices'
 import { useDispatch, useSelector } from 'react-redux'
 import { buyTicket } from '@/services/blockchain'
@@ -10,7 +10,7 @@ import { buyTicket } from '@/services/blockchain'
 const BuyTicket = ({ event }) => {
   const{ticketModal} = useSelector((state) => state.globalStates)
   const {setTicketModal} = globalActions;
-  const { address } = useAccount()
+  const { address } = useAppKitAccount()
   const [tickets, setTickets] = useState('')
 
   const dispatch = useDispatch()
