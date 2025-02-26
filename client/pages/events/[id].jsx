@@ -34,7 +34,7 @@ const Page = ({ eventData, ticketsData }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <section className="flex justify-center items-center flex-col flex-wrap p-6 mt-[100px]">
+      <section className="flex justify-center items-center flex-col flex-wrap p-6 ">
         <main
           className="lg:w-2/3 w-full mx-auto flex justify-start items-center
           flex-col sm:space-x-3"

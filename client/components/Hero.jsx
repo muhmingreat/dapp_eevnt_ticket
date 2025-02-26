@@ -3,7 +3,7 @@ import React from 'react'
 
 const Hero = () => {
   return (
-    <main className="lg:w-2/2 w-full mx-auto relative shadow-md px-5 pypa-7 bg-white mt-[100px]">
+    <main className="lg:w-2/2 w-full mx-auto relative shadow-md px-5 pypa-7 bg-white ">
       <div className="relative pb-8 ">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="sm:text-center lg:text-left">

@@ -6,7 +6,7 @@ import { FaEthereum } from 'react-icons/fa'
 const EventList = ({ events }) => {
   return (
     <section className="mt-10">
-      <main className="lg:w-2/2 w-full mx-auto m-5 mt-[100px]">
+      <main className="lg:w-2/2 w-full mx-auto m-5 ">
         <h4 className="text-2xl font-semibold my-8 m-2 text-center">Recent Events</h4>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto  w-full justify-items-center">
           {events.map((event, i) => (

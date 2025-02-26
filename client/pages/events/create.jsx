@@ -113,7 +113,7 @@ const Page = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="lg:w-2/3 w-full mx-auto bg-white p-5 shadow-md mt-[80px]">
+      <main className="lg:w-2/3 w-full mx-auto bg-white p-5 shadow-md ">
         <form onSubmit={handleSubmit} className="flex flex-col text-black">
           <div className="flex flex-row justify-between items-center mb-5">
             <p className="font-semibold">Create Event</p>
